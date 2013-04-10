@@ -17,11 +17,8 @@
 # limitations under the License.
 #
 
-#freshen up the apt repository, but not conflicting with the apt recipe
-execute("apt-get-update") do
-  command "apt-get update"
-  ignore_failure true
-end.run_action(:run)
+#freshen up the apt repository using the apt cookbook
+include_recipe "apt"
 
 #turn off apparmor
 service("apparmor") { action [:stop,:disable] }

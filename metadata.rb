@@ -9,3 +9,5 @@ version          "0.3.0"
 %w{ ubuntu redhat }.each do |os|
   supports os
 end
+
+depends "apt"
